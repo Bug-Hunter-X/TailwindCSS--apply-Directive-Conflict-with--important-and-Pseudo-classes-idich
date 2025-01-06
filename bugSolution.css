@@ -1,0 +1,30 @@
+/* bugSolution.css */
+
+.base-class {
+  /* Avoid using !important here if possible */
+  background-color: lightblue;
+}
+
+.hover-class {
+  @apply hover:bg-red-500;
+}
+
+/* OR a more specific approach if !important is unavoidable */
+.base-class {
+  background-color: lightblue !important;  /* Use !important only if absolutely necessary */
+}
+
+.hover-class {
+  @apply hover:bg-red-500 !important; /* Add !important only to the hover class to override */
+}
+
+/* Or a restructuring approach if possible */
+.base-class {
+  background-color: lightblue;
+}
+
+.base-class:hover {
+  background-color: red;
+}
+
+/* This solution avoids the @apply and keeps it simple. However, if the hover styles are more complex, the @apply directive can be maintained if the !important flag is removed */
